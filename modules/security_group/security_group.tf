@@ -107,3 +107,23 @@ resource "aws_security_group" "alb_sg" {
     Name = "${var.resource_name}-web"
   }
 }
+
+resource "aws_security_group" "rds_sg" {
+  name        = "${var.resource_name}-rds"
+  description = "sg for rds"
+  vpc_id      = var.vpc_id
+
+  ingress {
+    from_port       = 3306
+    to_port         = 3306
+    protocol        = var.protocol_tcp
+    security_groups = [aws_security_group.web_sg.id]
+  }
+
+  egress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = var.protocol_tcp
+    cidr_blocks = [var.placeholder_address]
+  }
+}

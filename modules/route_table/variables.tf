@@ -17,7 +17,3 @@ variable "cidr_block" {
 variable "gateway_id" {
   default = ""
 }
-
-# variable "nat_gateway_id" {
-#   default = ""
-# }

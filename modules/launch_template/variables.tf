@@ -6,10 +6,6 @@ variable "vpc_security_group_ids" {
   default = []
 }
 
-# variable "user_data" {
-#   default = ""
-# }
-
 variable "ami-id" {
   default = "ami-02453f5468b897e31"
 }
