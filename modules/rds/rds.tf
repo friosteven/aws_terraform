@@ -4,8 +4,8 @@ resource "aws_db_instance" "rds-mysql" {
   engine                 = "mysql"
   engine_version         = "8.0.33"
   instance_class         = "db.t3.micro"
-  username               = "rds_mysql_admin"
-  password               = "sk2Ja0f1Z^"
+  username               = var.rds_username
+  password               = var.rds_password
   parameter_group_name   = "default.mysql8.0"
   identifier             = "steven-rds-mysql"
   vpc_security_group_ids = var.vpc_security_group_ids
