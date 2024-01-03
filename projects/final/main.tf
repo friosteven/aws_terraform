@@ -52,3 +52,8 @@ module "rds" {
   rds_username = var.secrets_rds_username
   rds_password = var.secrets_rds_password
 }
+
+module "dynamo" {
+  source = "../../modules/dynamodb"
+  dynamodb_name = var.dynamodb_name
+}

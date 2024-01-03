@@ -12,6 +12,7 @@ resource "aws_db_instance" "rds-mysql" {
   db_subnet_group_name   = aws_db_subnet_group.db_subnet_group.name
   multi_az               = true
   port                   = 3306
+  skip_final_snapshot = true
 }
 
 resource "aws_db_subnet_group" "db_subnet_group" {

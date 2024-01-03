@@ -20,6 +20,15 @@ resource "aws_security_group" "bastion_sg" {
     cidr_blocks = ["112.210.234.130/32"]
   }
 
+  ingress {
+    description = "office ip with vpn"
+    from_port   = var.port_ssh # ssh
+    to_port     = var.port_ssh # ssh
+    protocol    = var.protocol_tcp
+    cidr_blocks = ["61.245.9.122/32"]
+  }
+
+
   egress {
     from_port   = 0
     to_port     = 0

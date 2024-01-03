@@ -10,7 +10,7 @@ variable "user" {
 }
 
 variable "s3_name" {
-  default = "steven-s3-state-bucket"
+  default = "steven-s3-tfstate-bucket"
 }
 
 variable "s3_tf_key" {
@@ -46,4 +46,8 @@ variable "access_type" {
 
 variable "resource_name" {
   default = ""
+}
+
+variable "dynamodb_name" {
+  default = "steven-dynamo-table"
 }
